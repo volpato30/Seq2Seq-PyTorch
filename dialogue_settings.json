@@ -1,0 +1,44 @@
+{
+  "training": {
+    "optimizer": "adam",
+    "clip_c": 1,
+    "lrate": 0.0001
+  },
+  "management": {
+    "monitor_loss": 10,
+    "print_samples": 2000,
+    "checkpoint_freq": 2000
+  },
+  "data": {
+    "src": "/data3/rqiao/seq2seq_experiments/train_src",
+    "trg": "/data3/rqiao/seq2seq_experiments/train_trg",
+    "test_src": "/data3/rqiao/seq2seq_experiments/test_src",
+    "test_trg": "/data3/rqiao/seq2seq_experiments/test_trg",
+    "batch_size": 80,
+    "n_words_trg": 50000,
+    "valid_batch_size": 80,
+    "n_words_src": 50000,
+    "max_src_length": 50,
+    "max_trg_length": 50,
+    "task": "dialogue",
+    "save_dir": "/data3/rqiao/seq2seq_experiments/models/torch_seq2seq",
+    "load_dir": false
+  },
+  "model": {
+    "dim": 1000,
+    "dim_trg": 1000,
+    "use_dropout": true,
+    "dim_word_src": 500,
+    "n_words_src": 50000,
+    "n_words": 50000,
+    "dim_word_trg": 500,
+    "n_layers_src": 2,
+    "n_layers_trg": 1,
+    "bidirectional": true,
+    "src_lang": "ch",
+    "trg_lang": "ch",
+    "decode": "greedy",
+    "seq2seq": "attention",
+    "optimizer": "adam"
+  }
+}

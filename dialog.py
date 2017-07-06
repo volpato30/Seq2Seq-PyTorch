@@ -51,7 +51,7 @@ console.setFormatter(formatter)
 logging.getLogger('').addHandler(console)
 
 
-print 'Reading data ...'
+print('Reading data ...')
 
 src, trg = read_dialog_summarization_data(
     config['data']['src'],
@@ -123,9 +123,9 @@ elif config['training']['optimizer'] == 'sgd':
 else:
     raise NotImplementedError("Learning method not recommend for task")
 
-for i in xrange(1000):
+for i in range(1000):
     losses = []
-    for j in xrange(0, len(src['data']), batch_size):
+    for j in range(0, len(src['data']), batch_size):
 
         input_lines_src, _, lens_src, mask_src = get_minibatch(
             src['data'], src['word2id'], j,
